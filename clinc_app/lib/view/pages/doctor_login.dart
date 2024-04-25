@@ -16,7 +16,7 @@ class DoctorLogin extends StatelessWidget {
           userLogo: "asset/doctor_logo.png",
           title: "DOCTOR",
           doctorLogoSize: 50,
-          onPressed: () => Get.to(DoctorHomePage()),
+          onPressed: () => Get.off(DoctorHomePage()),
         ),
       ),
     ));

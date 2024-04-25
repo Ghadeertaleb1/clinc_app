@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:clinc_app/core/constant.dart';
+import 'package:clinc_app/core/constant/colors.dart';
 
 class TextFiledEffect extends StatelessWidget {
   final Widget? child;

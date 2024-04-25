@@ -1,4 +1,5 @@
 import 'package:clinc_app/controller/login/login_controller.dart';
+import 'package:clinc_app/core/constant/constant.dart';
 import 'package:clinc_app/view/component/blue_container.dart';
 import 'package:clinc_app/view/component/custom_button.dart';
 import 'package:clinc_app/view/component/custom_image.dart';
@@ -11,7 +12,7 @@ import 'package:clinc_app/view/component/text_field_effect.dart';
 import 'package:clinc_app/view/pages/forget_password.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:clinc_app/core/constant.dart';
+import 'package:clinc_app/core/constant/colors.dart';
 
 class CustomHomePage extends StatelessWidget {
   final String userLogo;
@@ -66,7 +67,7 @@ class CustomHomePage extends StatelessWidget {
                         TextFiledEffect(
                           child: CustomTextField(
                             obscureText: loginController.visibility.value,
-                            text: "Your Name",
+                            text: Constant.inputName,
                           ),
                         ),
                         SizedBox(
@@ -77,7 +78,7 @@ class CustomHomePage extends StatelessWidget {
                             return TextFiledEffect(
                               child: CustomTextField(
                                 obscureText: controller.visibility.value,
-                                text: "Password",
+                                text: Constant.password,
                                 suffixIcon: IconButton(
                                   color: AppColors.grey,
                                   onPressed: () {
@@ -99,7 +100,7 @@ class CustomHomePage extends StatelessWidget {
                           child: InkWell(
                             onTap: () => Get.to(ForgetPasswordPage()),
                             child: Text(
-                              "Forget Password?",
+                              Constant.forgetPassword,
                               style: TextStyle(
                                   color: AppColors.blue, fontSize: 12),
                             ),

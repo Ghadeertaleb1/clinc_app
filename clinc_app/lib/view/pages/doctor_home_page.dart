@@ -1,4 +1,6 @@
-import 'package:clinc_app/core/constant.dart';
+import 'package:clinc_app/core/constant/colors.dart';
+import 'package:clinc_app/core/constant/constant.dart';
+import 'package:clinc_app/view/component/circle_avatar.dart';
 import 'package:clinc_app/view/component/custom_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,13 +22,13 @@ class DoctorHomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CircleAvatar(
-                    radius: Get.width * 0.10,
-                    backgroundImage: AssetImage("asset/dr_profile.png")),
+                CirclerAvatar(
+                    url: "asset/dr_profile.png", width: Get.width * 0.10),
                 Row(children: [
                   CustomImage(url: "asset/bell.png"),
                   SizedBox(width: 15),
                   InkWell(
+                    onTap: () {},
                     child: CustomImage(url: "asset/options.png"),
                   )
                 ]),
@@ -36,24 +38,18 @@ class DoctorHomePage extends StatelessWidget {
               height: 20,
             ),
             Text(
-              "Hello,",
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w300,
-                  color: AppColors.blue),
+              Constant.helloText,
+              style: Constant.w300TitleStyle(AppColors.blue, 30),
             ),
             Text(
-              "Dr. Alexender!,",
-              style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w600,
-                  color: AppColors.blue),
+              Constant.drName,
+              style: Constant.w600TitleStyle(),
             ),
             SizedBox(
               height: 20,
             ),
             SearchBar(
-                hintText: "Search..",
+                hintText: Constant.search,
                 leading: Icon(
                   Icons.search,
                   color: AppColors.blue,
@@ -69,8 +65,112 @@ class DoctorHomePage extends StatelessWidget {
               height: 60,
             ),
             Text(
-              "Today Appointments",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+              Constant.todayAppointments,
+              style: Constant.w300TitleStyle(AppColors.black, 30),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: Get.height * 0.18,
+              width: Get.width,
+              child: ListView.builder(
+                  // padding: EdgeInsets.all(10),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    return Container(
+                        width: Get.width * 0.30,
+                        margin:const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(color: AppColors.white, width: 2),
+                          boxShadow: [
+                            const BoxShadow(
+                                color: AppColors.white,
+                                blurRadius: 2,
+                                spreadRadius: 0.2,
+                                offset: Offset(2, 2),
+                                blurStyle: BlurStyle.outer),
+                            BoxShadow(
+                                color: AppColors.grey.withOpacity(0.3),
+                                blurRadius: 10,
+                                spreadRadius: 0.2,
+                                offset: -const Offset(2, 2),
+                                blurStyle: BlurStyle.outer),
+                          ],
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(children: [
+                              CirclerAvatar(
+                                url: "asset/patient1.png",
+                                width: Get.height * 0.03,
+                              )
+                            ]),
+                            Row(children: [
+                              Text(
+                                "Patient Name",
+                                style: Constant.w300TitleStyle(
+                                    AppColors.black, 15),
+                              ),
+                            ]),
+                            Expanded(child: Container()),
+                            Container(
+                              width: Get.width * 0.25,
+                              decoration: BoxDecoration(
+                                color: AppColors.pink.withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Text(
+                                "Thyroid Dysfunction",
+                                style:
+                                    Constant.w300TitleStyle(AppColors.pink, 11),
+                              ),
+                            ),
+                            Expanded(
+                              child: Container(),
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              width: Get.width * 0.30,
+                              decoration: BoxDecoration(
+                                  color: AppColors.blue,
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(5),
+                                    bottomRight: Radius.circular(5),
+                                  )),
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.only(top: 6, left: 10),
+                                    child: CustomImage(
+                                      url: "asset/timer.png",
+                                      width: 20,
+                                      height: 20,
+                                    ),
+                                  ),
+                                  Text(
+                                    "10:00 AM",
+                                    style: Constant.w300TitleStyle(
+                                        AppColors.white, 15),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ));
+                  }),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Explore",
+              style: Constant.loginTitleStyle(AppColors.black),
             )
           ]),
         ),

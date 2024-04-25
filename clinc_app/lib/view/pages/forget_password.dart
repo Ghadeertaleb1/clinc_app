@@ -1,4 +1,4 @@
-import 'package:clinc_app/core/constant.dart';
+import 'package:clinc_app/core/constant/colors.dart';
 import 'package:clinc_app/view/component/blue_container.dart';
 import 'package:clinc_app/view/component/custom_image.dart';
 import 'package:clinc_app/view/component/custom_text_field.dart';

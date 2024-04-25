@@ -1,4 +1,5 @@
-import 'package:clinc_app/core/constant.dart';
+import 'package:clinc_app/core/constant/colors.dart';
+import 'package:clinc_app/core/constant/constant.dart';
 import 'package:flutter/material.dart';
 
 class CustomLoginTitle extends StatelessWidget {
@@ -10,10 +11,6 @@ class CustomLoginTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(
-          color: AppColors.blue, fontSize: 20, fontWeight: FontWeight.bold),
-    );
+    return Text(text, style: Constant.loginTitleStyle(AppColors.blue));
   }
 }

@@ -1,4 +1,4 @@
-import 'package:clinc_app/core/constant.dart';
+import 'package:clinc_app/core/constant/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
